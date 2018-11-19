@@ -16,6 +16,7 @@ public class PrimosService implements IPrimosService{
 	public List<Long> generarPrimos(Long numeroMaximo) {
 		List<Long> resultado = new ArrayList<>();
 		for(long i = 1; i < numeroMaximo ; i++) {
+			System.out.println("Iterando la serie: ".concat(""+i));
 			if(isNumberPrimo(i)) {
 				resultado.add(i);
 			}
