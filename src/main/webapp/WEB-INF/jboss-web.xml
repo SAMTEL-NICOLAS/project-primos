@@ -1,0 +1,4 @@
+<!DOCTYPE xml>
+<jboss-web>
+	<context-root>/project-primos</context-root>
+</jboss-web>
