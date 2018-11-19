@@ -26,8 +26,18 @@ public class PrimosController {
 	 * @return
 	 */
 	@GetMapping(value= "/{maximo}")
-	public ResponseEntity<List<Integer>> getPrimos(@PathVariable(value="maximo", required=true) Integer maximo){
+	public ResponseEntity<List<Long>> getPrimos(@PathVariable(value="maximo", required=true) Long maximo){
 		return new ResponseEntity<>(primosService.generarPrimos(maximo), HttpStatus.OK);
+	}
+	
+	@GetMapping(value= "/isPrime/{number}")
+	public ResponseEntity<Boolean> getPrime(@PathVariable(value="number", required=true) Long number){
+		return new ResponseEntity<>(primosService.isNumberPrimo(number), HttpStatus.OK);
+	}
+	
+	@GetMapping(value= "/isPrimeWhy/{number}")
+	public ResponseEntity<Long> getPrimeWhy(@PathVariable(value="number", required=true) Long number){
+		return new ResponseEntity<>(primosService.isNumberPrimoWhy(number), HttpStatus.OK);
 	}
 	
 }

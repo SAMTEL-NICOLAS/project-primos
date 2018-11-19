@@ -13,9 +13,9 @@ public class PrimosService implements IPrimosService{
 	 * Metodo con el cual valido un rango de numeros primos
 	 */
 	@Override
-	public List<Integer> generarPrimos(Integer numeroMaximo) {
-		List<Integer> resultado = new ArrayList<>();
-		for(int i = 1; i < numeroMaximo ; i++) {
+	public List<Long> generarPrimos(Long numeroMaximo) {
+		List<Long> resultado = new ArrayList<>();
+		for(long i = 1; i < numeroMaximo ; i++) {
 			if(isNumberPrimo(i)) {
 				resultado.add(i);
 			}
@@ -27,13 +27,22 @@ public class PrimosService implements IPrimosService{
 	 * @param numero
 	 * @return
 	 */
-	private Boolean isNumberPrimo(Integer numero) {
+	public Boolean isNumberPrimo(Long numero) {
 		for(int i = 1; i <= (numero/2) ; i++) {
 			if(numero % i == 0 && i != 1 ) {
 				return Boolean.FALSE;
 			}
 		}
 		return Boolean.TRUE;
+	}
+	
+	public long isNumberPrimoWhy(Long numero) {
+		for(int i = 1; i <= (numero/2) ; i++) {
+			if(numero % i == 0 && i != 1 ) {
+				return i;
+			}
+		}
+		return Long.valueOf("-1");
 	}
 
 }

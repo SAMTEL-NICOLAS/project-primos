@@ -4,6 +4,10 @@ import java.util.List;
 
 public interface IPrimosService {
 	
-	public List<Integer> generarPrimos(Integer numeroMaximo);
+	public List<Long> generarPrimos(Long numeroMaximo);
+	
+	public Boolean isNumberPrimo(Long numero);
+	 
+	public long isNumberPrimoWhy(Long numero);
 
 }
